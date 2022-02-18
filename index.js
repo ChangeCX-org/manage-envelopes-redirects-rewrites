@@ -15,6 +15,9 @@ async function handleRequest(request) {
   console.log("The envelopes request url is " + request.url)
   const urlPath = new URL(request.url)
   const params = new URLSearchParams(urlPath.search)
+ 
+ 
+  
   console.log("The params Query String is" + params.toString())
   console.log("The urlPath Object is " + urlPath);
   const value = await ENVELOPES_REWRITE_MAP.get(urlPath.pathname)
@@ -29,6 +32,7 @@ async function handleRequest(request) {
       urlVal = urlVal + "?" + params.toString()
     }
     console.log("(Redirect) The Query String to be apppended to urlVal "+params.toString())    
+    console.log("The Redirect URL to be redirected is "+urlVal)
     isRedirectPath = true
     
   }
@@ -38,15 +42,12 @@ async function handleRequest(request) {
       urlVal = urlVal + "?" + params.toString()
     }
     console.log("(Rewrite) The Query String to be apppended to urlVal "+params.toString())        
+    console.log("The Rewrite URL to be redirected is "+urlVal)
     isRewrite = true
   }  else {    
     urlVal = request.url
-    //Append params to urlVal if params is not empty
-    if(params.toString() != "") {
-      urlVal = urlVal + "?" + params.toString()
-    }
     console.log("The Query String to be apppended to urlVal "+params.toString())
-    console.log("Since no path matched sending to URL Val"+urlVal)
+    console.log("Since no path matched sending to URL Val"+urlVal)    
   }
   if(isRewrite) {
     return fetch(new Request(urlVal, {
