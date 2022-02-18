@@ -3,7 +3,7 @@ type = "javascript"
 
 account_id = "15fab8531e3ea3674dd56c192d118b09"
 workers_dev = true
-route = "https://www.envelopes.com/*"
+route = "https://www.envelopes.com/asdf/1234/test*"
 zone_id = "936d25ecdb3ee5cb9eca9fc508d997c9"
 compatibility_date = "2022-01-14"
 kv_namespaces = [ 
