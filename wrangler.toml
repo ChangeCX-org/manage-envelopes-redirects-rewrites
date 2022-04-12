@@ -1,4 +1,4 @@
-name = "manage-envelopes-redirects-rewrites"
+name = "manage-envelopes-redirects-rewrites-allenv"
 type = "javascript"
 
 account_id = "15fab8531e3ea3674dd56c192d118b09"
@@ -8,5 +8,7 @@ zone_id = "936d25ecdb3ee5cb9eca9fc508d997c9"
 compatibility_date = "2022-01-14"
 kv_namespaces = [ 
   { binding = "ENVELOPES_REWRITE_MAP", id = "5568abc421894278971ea462f1583a1c" },
-  { binding = "ENVELOPES_REDIRECT_MAP", id = "3f87015f6a7942aab8dfcfe4990e1d0b" }
+  { binding = "ENVELOPES_REDIRECT_MAP", id = "3f87015f6a7942aab8dfcfe4990e1d0b" },
+  { binding = "QA_ENVELOPES_REWRITE_MAP", id = "b0b4a4bbfb8a428da90eecf418add824" },
+  { binding = "QA_ENVELOPES_REDIRECT_MAP", id = "f7e828f0ac354eaba11c02a869891d93" },  
 ]
